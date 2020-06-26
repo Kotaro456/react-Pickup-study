@@ -1,14 +1,5 @@
 import React from 'react';
 import {render} from 'react-dom';
+import PickUpStudy from './components/PickUpStudy';
 
-class Test extends React.Component {
-    render() {
-        return (
-            <div>
-              Hello React!!
-            </div>
-        );
-    }
-}
-
-render(<Test />, document.getElementById('app'));
+render(<PickUpStudy />, document.getElementById('app'));

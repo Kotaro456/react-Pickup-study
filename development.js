@@ -8,6 +8,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 const src = path.resolve(__dirname,'src');
 const dist = path.resolve(__dirname, 'dist');
 
+
 export default {
     // webpack4から使えるようになったらしい
     mode: 'development',
@@ -21,6 +22,9 @@ export default {
         filename: 'bundle.js'
     },
 
+    // ソースマップ
+    devtool: 'inline-cheap-source-map',
+
     // bundleファイルを作るために、色々な種類のファイルを変換する
     module: {
         rules: [
@@ -31,6 +35,29 @@ export default {
 
                 //このloaderを使ってbundleファイルに追加する前に変換
                loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    // linkタグに出力する機能
+                    "style-loader",
+
+                    // CSSをバンドルする
+                    {
+                        loader: "css-loader",
+                        options: {
+                            // CSS内のurlの読み込みのやつ
+                             url: true,
+
+                            //  css-loader,sass-loader
+                             importLoaders: 2
+                        }
+                    },
+                    {
+                        loader: "sass-loader",
+                        
+                    }
+                ]
             }
         ]
     },

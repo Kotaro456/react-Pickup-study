@@ -6,6 +6,7 @@ import AddOption from './AddOption';
 
 
 
+
 class PickUpStudy extends React.Component {
     constructor(props) {
         super(props);
@@ -13,7 +14,7 @@ class PickUpStudy extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="study">
             <Header />
               <PickUp />
               <Options />

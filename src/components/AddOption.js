@@ -4,7 +4,8 @@ class AddOption extends React.Component {
     render() {
         return(
             <div>
-              AddOption component - ここで教科を追加する
+              <input type="text" />
+              <button>追加</button>
             </div>
         );
     }

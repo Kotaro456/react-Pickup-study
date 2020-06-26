@@ -4,7 +4,8 @@ class PickUp extends React.Component {
     render() {
         return (
             <div>
-              PickUp Component - ここで勉強する教科を選ぶ
+              <p>時間：00:00:00</p>
+              <button>何を勉強する？</button>
             </div>
         );
     }

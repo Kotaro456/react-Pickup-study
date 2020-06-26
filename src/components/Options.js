@@ -5,7 +5,8 @@ class Options extends React.Component {
     render() {
         return (
             <div>
-              Options Component - ここに教科を入れる
+              <h1>Subjects</h1>
+              <button>delete all</button>
               <Option />
             </div>
         );

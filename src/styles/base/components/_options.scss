@@ -1,0 +1,22 @@
+.options {
+    width: 90%;
+    margin: $xxl-size auto 0 auto;
+    border: 2px solid $darkturquoise;
+
+    .options__header {
+        background: lighten($darkturquoise, 50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 2px solid $darkturquoise;
+
+        &-button {
+            border: none;
+            background: $darkturquoise;
+            color: white;
+            width: 150px;
+            padding: $s-size 0;
+            font-size: $m-size;
+        }
+    }
+}

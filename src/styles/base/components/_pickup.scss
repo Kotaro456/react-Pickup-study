@@ -1,0 +1,27 @@
+.pickup {
+    text-align: center;
+    margin-bottom: $xxl-size;
+
+    &__pickup-time {
+        border: 2px solid $darkturquoise;
+        width: 150px;
+        margin: $xl-size auto $xl-size auto;
+    }
+
+    &__pickup-button {
+        width: 600px;
+        padding: $m-size 0;
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: white;
+        background: $darkturquoise;
+        border: none;
+        border-bottom: 5px solid darken($darkturquoise, 10%);
+
+        // ボタン押すとへこむ操作
+        &:active {
+            border-bottom: none;
+            margin-top: 5px;
+        }
+    }
+}

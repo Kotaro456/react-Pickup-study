@@ -1,3 +1,6 @@
-.study {
-    background: blue;
-}
+@import './base/settings';
+@import './base/base';
+@import './base/components/header';
+@import './base/components/pickup';
+@import './base/components/options';
+@import './base/components/addoption';

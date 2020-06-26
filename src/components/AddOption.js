@@ -3,9 +3,9 @@ import React from 'react';
 class AddOption extends React.Component {
     render() {
         return(
-            <div>
-              <input type="text" />
-              <button>追加</button>
+            <div className="addoption">
+              <input className="addoption__textbox" type="text" />
+              <button className="addoption__button">追加</button>
             </div>
         );
     }

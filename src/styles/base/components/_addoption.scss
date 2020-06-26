@@ -1,0 +1,28 @@
+.addoption {
+    width: 90%;
+    margin: 0 auto $xxl-size auto;
+    display: flex;
+
+    &__textbox {
+        width: 70%;
+        border: 2px solid darken($darkturquoise, 10%);
+        font-size: 150%;
+    }
+
+    &__button {
+        width: 30%;
+        padding: $m-size 0;
+        font-size: $m-size;
+        font-weight: 500;
+        color: white;
+        background: $darkturquoise;
+        border: none;
+        border-bottom: 5px solid darken($darkturquoise, 10%);
+
+        // ボタン押すとへこむ操作
+        &:active {
+            border-bottom: none;
+            margin-top: 5px;
+        }
+    }
+}

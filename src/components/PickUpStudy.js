@@ -14,6 +14,7 @@ class PickUpStudy extends React.Component {
             subjects: ["数学", "国語", "理科", "英語", "社会"],
             studyTime: ["10min", "20min", "40min", "60min", "80min"],
         }
+
     }
     render() {
         return (
@@ -23,7 +24,9 @@ class PickUpStudy extends React.Component {
                subjects={this.state.subjects}
                studyTime={this.state.studyTime}
                />
-              <Options />
+              <Options
+               subjects={this.state.subjects}
+              />
               <AddOption />
             </div>
         );

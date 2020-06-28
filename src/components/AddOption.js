@@ -26,7 +26,10 @@ class AddOption extends React.Component {
       /**PickUpStudyコンポーネントから受け取ったメソッド発動 */
     }
     {
-      /**ifの条件式で入力フォームが空じゃないこと確認 */
+      /**ifの条件式で入力フォームが空じゃないこと確認 
+       * 配列の要素が重複していないかの確認
+       * 重複や入力値が空の時のエラーメッセージ
+      */
     }
     if (textValue !== "") {
       if (subjects.indexOf(textValue) > -1) {

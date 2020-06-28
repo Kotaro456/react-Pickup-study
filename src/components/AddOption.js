@@ -7,8 +7,13 @@ class AddOption extends React.Component {
     }
 
    addOption(event) {
+       {/**ユーザーが行うイベントのため　event.preventDefault();いれた方がいいかも */}
        event.preventDefault();
+
+       {/**入力されたテキストを取得 */}
        const textValue = event.target.elements.textBox.value;
+
+       {/**PickUpStudyコンポーネントから受け取ったメソッド発動 */}
        this.props.addOption(textValue);
    }
 

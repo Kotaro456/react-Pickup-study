@@ -27,9 +27,10 @@ class PickUpStudy extends React.Component {
         this.setState({ subjects: []});
     }
 
-    deleteOne (option) {
+    deleteOne (removeOption) {
+        {/**filter()で配列から特定の要素を抽出し削除 */}
         this.setState((prevState) => ({ subjects: prevState.subjects.filter(function(option){
-            return option !== option;
+            return removeOption !== option;
         }) }));
     }
 

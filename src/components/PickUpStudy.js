@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import PickUp from './PickUp';
-import Options from './Options';
 import AddOption from './AddOption';
+import Options from './Options';
+
 
 
 
@@ -11,11 +12,23 @@ class PickUpStudy extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            subjects: ["数学", "国語", "理科", "英語", "社会"],
+            subjects: [],
             studyTime: ["10min", "20min", "40min", "60min", "80min"],
-        }
+        };
 
+        // ほかのコンポーネントに渡すときにbindする必要あり、Yehuda Katzの記事
+        this.addOption = this.addOption.bind(this);
+        this.deleteAll = this.deleteAll.bind(this);
     }
+
+    deleteAll() {
+        this.setState({ subjects: []});
+    }
+
+    addOption(subject) {
+        this.setState((prevState) => ({ subjects: prevState.subjects.concat([subject]) }));
+    }
+
     render() {
         return (
             <div className="study">
@@ -26,8 +39,12 @@ class PickUpStudy extends React.Component {
                />
               <Options
                subjects={this.state.subjects}
+               deleteAll={this.deleteAll}
               />
-              <AddOption />
+              <AddOption
+               subjects={this.state.subjects}
+               addOption={this.addOption}
+              />
             </div>
         );
     }

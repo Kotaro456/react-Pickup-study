@@ -12,7 +12,7 @@ class PickUpStudy extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            subjects: [],
+            subjects: ['数学', '生物', '化学', '国語'],
             studyTime: ["10min", "20min", "40min", "60min", "80min"],
         };
 

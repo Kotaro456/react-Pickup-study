@@ -1,0 +1,30 @@
+.option {
+    width: 25%;
+    background: darken(white, 3%);
+    max-height: 100px;
+    height: 100px;
+    margin: $m-size 0;
+    border: 2px solid $darkturquoise;
+    text-align: center;
+    background: white;
+
+    &__content {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &__button {
+        padding: 0.5rem;
+        font-weight: 500;
+        color: white;
+        background: $darkturquoise;
+        border: none;
+        border-bottom: 3px solid darken($darkturquoise, 10%);
+
+        // ボタン押すとへこむ操作
+        &:active {
+            border-bottom: none;
+            margin-top: 3px;
+        }
+    }
+}

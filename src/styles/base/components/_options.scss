@@ -3,7 +3,7 @@
     margin: $xxl-size auto 0 auto;
     border: 2px solid $darkturquoise;
 
-    .options__header {
+    &__header {
         background: lighten($darkturquoise, 50%);
         display: flex;
         align-items: center;
@@ -18,5 +18,12 @@
             padding: $s-size 0;
             font-size: $m-size;
         }
+    }
+
+    &__contents {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: $m-size 0;
     }
 }

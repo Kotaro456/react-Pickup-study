@@ -18,7 +18,7 @@ class Options extends React.Component {
             delete all
           </button>
         </div>
-        <div>
+        <div className="options__contents">
         {/**subjects配列を1つずつpropsとして入れている */}
           {this.props.subjects.map((subject) => {
             //             keyをつけないといけないらしい。よくわからん。後で調べる

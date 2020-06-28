@@ -27,14 +27,20 @@ class PickUpStudy extends React.Component {
         this.setState({ subjects: []});
     }
 
-    deleteOne (removeOption) {
+    deleteOne (removeSubject) {
         {/**filter()で配列から特定の要素を抽出し削除 */}
-        this.setState((prevState) => ({ subjects: prevState.subjects.filter(function(option){
-            return removeOption !== option;
+        {/**prevStateは変更前のthis.state subjects配列の要素を1つずつremoveSubjectと照らし合わせる
+        　removeSubjectはOptionコンポーネントでdeleteボタンを押されたもの */}
+        this.setState((prevState) => ({ subjects: prevState.subjects.filter(function(subject){
+            return removeSubject !== subject;
         }) }));
     }
 
+    // 追加メソッド 引数subjectはAddOptionコンポーネントからで取得したtextValue
     addOption(subject) {
+
+        // pushはオリジナルのstateのsubjects配列をいじるが、concatは新しい配列を生成
+        // pushを使うとstateが変異するため、react的には好ましくないためconcatの方が良い
         this.setState((prevState) => ({ subjects: prevState.subjects.concat([subject]) }));
     }
 

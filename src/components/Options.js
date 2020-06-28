@@ -16,7 +16,7 @@ class Options extends React.Component {
         <div>
         {/**subjects配列を1つずつpropsとして入れている */}
           {this.props.subjects.map((subject) => {
-            //             keyをつけないといけないらしい。よくわからん
+            //             keyをつけないといけないらしい。よくわからん。後で調べる
             return <Option deleteOne={this.props.deleteOne} key={subject} subject={subject} />;
           })}
         </div>

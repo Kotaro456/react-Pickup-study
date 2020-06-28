@@ -19,10 +19,18 @@ class PickUpStudy extends React.Component {
         // ほかのコンポーネントに渡すときにbindする必要あり、Yehuda Katzの記事
         this.addOption = this.addOption.bind(this);
         this.deleteAll = this.deleteAll.bind(this);
+        this.deleteOne = this.deleteOne.bind(this);
+
     }
 
     deleteAll() {
         this.setState({ subjects: []});
+    }
+
+    deleteOne (option) {
+        this.setState((prevState) => ({ subjects: prevState.subjects.filter(function(option){
+            return option !== option;
+        }) }));
     }
 
     addOption(subject) {
@@ -40,6 +48,7 @@ class PickUpStudy extends React.Component {
               <Options
                subjects={this.state.subjects}
                deleteAll={this.deleteAll}
+               deleteOne={this.deleteOne}
               />
               <AddOption
                subjects={this.state.subjects}

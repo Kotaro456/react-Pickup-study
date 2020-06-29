@@ -132,7 +132,7 @@ class PickUpStudy extends React.Component {
                 isModal={this.state.isModal}
               />
             ) : (
-              <p>Stay hungry. Stay foolish</p>
+              <p className="study__insteadModal">Stay hungry. Stay foolish</p>
             )
           }
 

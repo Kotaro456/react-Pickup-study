@@ -1,0 +1,17 @@
+.study {
+    background: $mintcream;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    &__insteadModal {
+        width: 300px;
+        color: $darkturquoise;
+        background: white;
+        margin: $l-size auto $m-size auto;
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 600;
+        border: 3px solid $darkturquoise;
+        padding: $s-size;
+    }
+}

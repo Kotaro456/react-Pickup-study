@@ -1,7 +1,9 @@
 @import './base/settings';
 @import './base/base';
+@import './base/components/pickUpStudy';
 @import './base/components/header';
 @import './base/components/pickup';
 @import './base/components/options';
 @import './base/components/addoption';
-@import './base/components/_option';
+@import './base/components/option';
+@import './base/components/_modal';

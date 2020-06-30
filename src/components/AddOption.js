@@ -49,7 +49,7 @@ class AddOption extends React.Component {
   render() {
     return (
       <div>
-        {this.state.errorMessage !== "" && <p>{this.state.errorMessage}</p>}
+        {this.state.errorMessage !== "" && <p className="error-message">{this.state.errorMessage}</p>}
         <form
           className="addoption"
           name="form"

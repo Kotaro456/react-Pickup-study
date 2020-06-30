@@ -21,6 +21,7 @@ class PickUpStudy extends React.Component {
     // ほかのコンポーネントに渡すときにbindする必要あり、Yehuda Katzの記事
     this.addOption = this.addOption.bind(this);
     this.deleteAll = this.deleteAll.bind(this);
+    this.defaultBack = this.defaultBack.bind(this);
     this.deleteOne = this.deleteOne.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -30,6 +31,10 @@ class PickUpStudy extends React.Component {
 
   deleteAll() {
     this.setState({ subjects: [] });
+  }
+
+  defaultBack() {
+    this.setState({ subjects: ["数1A", "数2B", "英語", "現代文", "古典・漢文", "休憩"] });
   }
 
   deleteOne(removeSubject) {
@@ -142,6 +147,7 @@ class PickUpStudy extends React.Component {
           subjects={this.state.subjects}
           deleteAll={this.deleteAll}
           deleteOne={this.deleteOne}
+          defaultBack={this.defaultBack}
           subjects={this.state.subjects}
           studyTime={this.state.studyTime}
         />

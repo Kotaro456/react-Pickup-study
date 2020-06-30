@@ -11,12 +11,20 @@ class Options extends React.Component {
       <div className="options">
         <div className="options__header">
           <h1 className="options__header-title">Subjects</h1>
+          <div>
+          <button
+           onClick={this.props.defaultBack}
+           className="options__header-button"
+          >
+            default
+          </button><br></br>
           <button
            onClick={this.props.deleteAll}
            className="options__header-button"
           >
             delete all
           </button>
+          </div>
         </div>
         <div className="options__contents">
         {/**subjects配列を1つずつpropsとして入れている */}

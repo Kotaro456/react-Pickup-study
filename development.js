@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'path';
 // path nodeのモジュールでデフォで入ってる
 
 // webpackで生成下JSやCSSを埋め込んだHMTLを作成する

@@ -5,7 +5,9 @@
   "author": "Kotaro456 <kotaro03281616@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "build:prod": "webpack -p --env production",
+    "start": "node server/server.js",
+    "dev-server": "webpack-dev-server"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
@@ -23,6 +25,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

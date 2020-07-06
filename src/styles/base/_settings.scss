@@ -6,7 +6,13 @@ $l-size: 3.2rem;
 $xl-size: 4.8rem;
 $xxl-size: 6.4rem;
 
-
 // Color
-$darkturquoise: #00CED1;
-$mintcream: #F5FFFA;
+$darkturquoise: #00ced1;
+$mintcream: #f5fffa;
+
+// breakpoint
+
+$breakpoints: (
+  "sm": "screen and (max-width: 559px)",
+  "md": "screen and (max-width: 959px)",
+) !default;

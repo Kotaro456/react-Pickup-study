@@ -1,17 +1,37 @@
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 .header {
-    width: 100%;
-    background: $darkturquoise;
+  width: 100%;
+  background: $darkturquoise;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-    &__header-title {
-        color: white;
+  @include mq(sm) {
+    display: block;
+    text-align: center;
+    padding: $s-size 0;
+  }
+
+  &__header-title {
+    color: white;
+
+    @include mq(sm) {
+      margin-bottom: 0;
     }
+  }
 
-    &__header-subtitle {
-        color: white;
-        font-weight: 400;
+  &__header-subtitle {
+    color: white;
+    font-weight: 400;
+
+    @include mq(sm) {
+      margin-top: 0;
     }
+  }
 }

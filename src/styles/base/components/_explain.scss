@@ -1,0 +1,26 @@
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.explain {
+  width: 90%;
+  margin: $s-size auto $xxl-size auto;
+  border-top: 2px solid darken($darkturquoise, 10%);
+
+  &__title {
+    text-align: center;
+    font-size: $l-size;
+  }
+
+  &__lists {
+    width: 90%;
+    margin: 0 auto;
+
+    &-list {
+      margin-bottom: $m-size;
+      font-weight: 600;
+    }
+  }
+}

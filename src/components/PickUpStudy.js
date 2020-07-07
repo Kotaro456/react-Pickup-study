@@ -4,6 +4,7 @@ import PickUp from "./PickUp";
 import AddOption from "./AddOption";
 import Options from "./Options";
 import Modal from "./Modal";
+import Explain from "./Explain";
 
 class PickUpStudy extends React.Component {
   constructor(props) {
@@ -34,7 +35,9 @@ class PickUpStudy extends React.Component {
   }
 
   defaultBack() {
-    this.setState({ subjects: ["数1A", "数2B", "英語", "現代文", "古典・漢文", "休憩"] });
+    this.setState({
+      subjects: ["数1A", "数2B", "英語", "現代文", "古典・漢文", "休憩"],
+    });
   }
 
   deleteOne(removeSubject) {
@@ -128,19 +131,18 @@ class PickUpStudy extends React.Component {
       <div className="study">
         <Header />
         {
-            /**条件に合わなければ、modalは表示しない JSXないではif文使えない(アロー関数とか使うといける)、３項演算子OK!*/
-            this.state.isModal === true ? (
-                <Modal
-                subject={this.state.randomSubject}
-                studyTime={this.state.randomTime}
-                handleCloseModal={this.handleCloseModal}
-                isModal={this.state.isModal}
-              />
-            ) : (
-              <p className="study__insteadModal">Stay hungry. Stay foolish</p>
-            )
-          }
-
+          /**条件に合わなければ、modalは表示しない JSXないではif文使えない(アロー関数とか使うといける)、３項演算子OK!*/
+          this.state.isModal === true ? (
+            <Modal
+              subject={this.state.randomSubject}
+              studyTime={this.state.randomTime}
+              handleCloseModal={this.handleCloseModal}
+              isModal={this.state.isModal}
+            />
+          ) : (
+            <p className="study__insteadModal">Stay hungry. Stay foolish</p>
+          )
+        }
 
         <PickUp handleOpenModal={this.handleOpenModal} />
         <Options
@@ -152,6 +154,7 @@ class PickUpStudy extends React.Component {
           studyTime={this.state.studyTime}
         />
         <AddOption subjects={this.state.subjects} addOption={this.addOption} />
+        <Explain />
       </div>
     );
   }

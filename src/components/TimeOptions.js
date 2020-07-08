@@ -19,7 +19,7 @@ class TimeOptions extends React.Component {
             </button>
             <br></br>
             <button
-              onClick={this.props.deleteAll}
+              onClick={this.props.deleteAllTime}
               className="options__header-button"
             >
               delete all

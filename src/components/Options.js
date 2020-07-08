@@ -12,25 +12,32 @@ class Options extends React.Component {
         <div className="options__header">
           <h1 className="options__header-title">Subjects</h1>
           <div>
-          <button
-           onClick={this.props.defaultBack}
-           className="options__header-button"
-          >
-            default
-          </button><br></br>
-          <button
-           onClick={this.props.deleteAll}
-           className="options__header-button"
-          >
-            delete all
-          </button>
+            <button
+              onClick={this.props.defaultBack}
+              className="options__header-button"
+            >
+              default
+            </button>
+            <br></br>
+            <button
+              onClick={this.props.deleteAllSubjects}
+              className="options__header-button"
+            >
+              delete all
+            </button>
           </div>
         </div>
         <div className="options__contents">
-        {/**subjects配列を1つずつpropsとして入れている */}
+          {/**subjects配列を1つずつpropsとして入れている */}
           {this.props.subjects.map((subject) => {
             //             keyをつけないといけないらしい。よくわからん。後で調べる
-            return <Option deleteOne={this.props.deleteOne} key={subject} subject={subject} />;
+            return (
+              <Option
+                deleteOne={this.props.deleteOne}
+                key={subject}
+                subject={subject}
+              />
+            );
           })}
         </div>
       </div>

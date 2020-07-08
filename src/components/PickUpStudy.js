@@ -22,7 +22,8 @@ class PickUpStudy extends React.Component {
 
     // ほかのコンポーネントに渡すときにbindする必要あり、Yehuda Katzの記事
     this.addOption = this.addOption.bind(this);
-    this.deleteAll = this.deleteAll.bind(this);
+    this.deleteAllSubjects = this.deleteAllSubjects.bind(this);
+    this.deleteAllTime = this.deleteAllTime.bind(this);
     this.defaultBack = this.defaultBack.bind(this);
     this.defaultBackTime = this.defaultBackTime.bind(this);
     this.deleteOne = this.deleteOne.bind(this);
@@ -32,8 +33,12 @@ class PickUpStudy extends React.Component {
     this.removeSubjectTime = this.removeSubjectTime.bind(this);
   }
 
-  deleteAll() {
-    this.setState({ subjects: [], studyTime: [] });
+  deleteAllSubjects() {
+    this.setState({ subjects: [] });
+  }
+
+  deleteAllTime() {
+    this.setState({ studyTime: [] });
   }
 
   defaultBack() {
@@ -158,7 +163,7 @@ class PickUpStudy extends React.Component {
         <PickUp handleOpenModal={this.handleOpenModal} />
         <Options
           subjects={this.state.subjects}
-          deleteAll={this.deleteAll}
+          deleteAllSubjects={this.deleteAllSubjects}
           deleteOne={this.deleteOne}
           defaultBack={this.defaultBack}
           subjects={this.state.subjects}
@@ -167,7 +172,7 @@ class PickUpStudy extends React.Component {
         <AddOption subjects={this.state.subjects} addOption={this.addOption} />
 
         <TimeOptions
-          deleteAll={this.deleteAll}
+          deleteAllTime={this.deleteAllTime}
           deleteOne={this.deleteOne}
           defaultBackTime={this.defaultBackTime}
           studyTimes={this.state.studyTime}

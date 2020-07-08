@@ -23,7 +23,9 @@ class Modal extends React.Component {
         ) : (
           <div className="modal__content">
             <h1 className="modal__content-subject">{this.props.subject}</h1>
-            <h2 className="modal__content-studyTime">{this.props.studyTime}</h2>
+            <h2 className="modal__content-studyTime">
+              {this.props.studyTime}min
+            </h2>
             <button
               className="modal__content-button"
               onClick={this.props.handleCloseModal}

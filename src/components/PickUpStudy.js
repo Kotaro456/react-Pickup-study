@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import PickUp from "./PickUp";
 import AddOption from "./AddOption";
+import AddTime from "./AddTime";
 import Options from "./Options";
 import TimeOptions from "./TimeOptions";
 import Modal from "./Modal";
@@ -12,7 +13,7 @@ class PickUpStudy extends React.Component {
     super(props);
     this.state = {
       subjects: ["数1A", "数2B", "英語", "現代文", "古典・漢文", "休憩"],
-      studyTime: ["10min", "20min", "40min", "60min", "80min"],
+      studyTime: ["10", "20", "40", "60", "80"],
       isModal: false,
 
       // pickUpSubjectTime()で変更するstateたち
@@ -22,6 +23,7 @@ class PickUpStudy extends React.Component {
 
     // ほかのコンポーネントに渡すときにbindする必要あり、Yehuda Katzの記事
     this.addOption = this.addOption.bind(this);
+    this.addTime = this.addTime.bind(this);
     this.deleteAllSubjects = this.deleteAllSubjects.bind(this);
     this.deleteAllTime = this.deleteAllTime.bind(this);
     this.defaultBack = this.defaultBack.bind(this);
@@ -77,6 +79,12 @@ class PickUpStudy extends React.Component {
     // pushを使うとstateが変異するため、react的には好ましくないためconcatの方が良い
     this.setState((prevState) => ({
       subjects: prevState.subjects.concat([subject]),
+    }));
+  }
+
+  addTime(time) {
+    this.setState((prevState) => ({
+      studyTime: prevState.studyTime.concat([time]),
     }));
   }
 
@@ -177,6 +185,8 @@ class PickUpStudy extends React.Component {
           defaultBackTime={this.defaultBackTime}
           studyTimes={this.state.studyTime}
         />
+
+        <AddTime times={this.state.studyTime} addTime={this.addTime} />
         <Explain />
       </div>
     );

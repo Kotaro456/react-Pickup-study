@@ -5,7 +5,7 @@ class TimeOption extends React.Component {
     return (
       <div className="option">
         {this.props.time && (
-          <p className="option__content">{this.props.time}</p>
+          <p className="option__content">{this.props.time}min</p>
         )}
         {/**this.props.deleteOne(this.props.subject) をそのまま入れるとerrorでpure functionじゃないとダメって言われる
          */}

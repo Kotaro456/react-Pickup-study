@@ -11,12 +11,16 @@ class Explain extends React.Component {
           </li>
 
           <li className="explain__lists-list">
-            delete allボタンでセットされている科目全てを削除することができます。
+            delete
+            allボタンでセットされている科目・時間全てを削除することができます。
           </li>
 
           <li className="explain__lists-list">
             defaultボタンを押すと、
-            「数1A」,「数2B」,「英語」,「現代文」,「古典・漢文」,「休憩」がセットされます。
+            「数1A」,「数2B」,「英語」,「現代文」,「古典・漢文」,「休憩」が
+            <br></br>
+            又は「10min」,「20min」,「30min」,「40min」,「60min」,「80min」が
+            セットされます。
           </li>
         </ul>
       </div>

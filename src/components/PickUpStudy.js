@@ -13,7 +13,7 @@ class PickUpStudy extends React.Component {
     super(props);
     this.state = {
       subjects: ["数1A", "数2B", "英語", "現代文", "古典・漢文", "休憩"],
-      studyTime: ["10", "20", "40", "60", "80"],
+      studyTime: ["10", "30", "20", "40", "60", "80"],
       isModal: false,
 
       // pickUpSubjectTime()で変更するstateたち

@@ -24,6 +24,7 @@ class PickUpStudy extends React.Component {
     this.addOption = this.addOption.bind(this);
     this.deleteAll = this.deleteAll.bind(this);
     this.defaultBack = this.defaultBack.bind(this);
+    this.defaultBackTime = this.defaultBackTime.bind(this);
     this.deleteOne = this.deleteOne.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -32,7 +33,7 @@ class PickUpStudy extends React.Component {
   }
 
   deleteAll() {
-    this.setState({ subjects: [] });
+    this.setState({ subjects: [], studyTime: [] });
   }
 
   defaultBack() {
@@ -41,7 +42,13 @@ class PickUpStudy extends React.Component {
     });
   }
 
-  deleteOne(removeSubject) {
+  defaultBackTime() {
+    this.setState({
+      studyTime: ["10min", "20min", "40min", "60min", "80min"],
+    });
+  }
+
+  deleteOne(removeOption) {
     {
       /**filter()で配列から特定の要素を抽出し削除 */
     }
@@ -51,7 +58,10 @@ class PickUpStudy extends React.Component {
     }
     this.setState((prevState) => ({
       subjects: prevState.subjects.filter(function (subject) {
-        return removeSubject !== subject;
+        return removeOption !== subject;
+      }),
+      studyTime: prevState.studyTime.filter(function (time) {
+        return removeOption !== time;
       }),
     }));
   }
@@ -155,6 +165,13 @@ class PickUpStudy extends React.Component {
           studyTime={this.state.studyTime}
         />
         <AddOption subjects={this.state.subjects} addOption={this.addOption} />
+
+        <TimeOptions
+          deleteAll={this.deleteAll}
+          deleteOne={this.deleteOne}
+          defaultBackTime={this.defaultBackTime}
+          studyTimes={this.state.studyTime}
+        />
         <Explain />
       </div>
     );

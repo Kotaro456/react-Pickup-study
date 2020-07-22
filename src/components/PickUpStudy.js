@@ -51,7 +51,7 @@ class PickUpStudy extends React.Component {
 
   defaultBackTime() {
     this.setState({
-      studyTime: ["10min", "20min", "40min", "60min", "80min"],
+      studyTime: ["10", "20", "40", "60", "80"],
     });
   }
 
